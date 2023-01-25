@@ -52,3 +52,11 @@ function operate(a, b, operator) {
     division(a, b);
   }
 }
+
+function display(displayText) {
+  let displayScreen = document.querySelector('#display');
+  console.log('test');
+  displayScreen.innerHTML = displayText;
+}
+
+display(666);
