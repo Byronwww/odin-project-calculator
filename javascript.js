@@ -53,9 +53,12 @@ function operate(a, b, operator) {
   }
 }
 
+/**
+ * Displays text on the calculator screen
+ * @param {*} displayText - the text to display on the screen
+ */
 function display(displayText) {
-  let displayScreen = document.querySelector('#display');
-  console.log('test');
+  const displayScreen = document.querySelector('#display');
   displayScreen.innerHTML = displayText;
 }
 
