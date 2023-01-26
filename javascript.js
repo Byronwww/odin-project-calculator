@@ -1,12 +1,20 @@
-let a = 0;
-let b = 0;
+let firstNumber = 0;
+let secondNumber = 0;
+let result = 0;
 let operator = '';
 
-function clear(){
-  a = 0;
-  b = 0;
-  operator = 0;
-  console.log('Clear function - a: ' + a + ' b: ' + b + ' operator: ' + operator);
+
+/**
+ * Clears all and updates the display
+ */
+function clear() {
+  firstNumber = 0;
+  secondNumber = 0;
+  result = 0;
+  operator = '';
+  console.log('Clear function - a: ' + firstNumber + ' secondNumber: ' +
+  secondNumber + ' operator: ' + operator + ' result: ' + result);
+  display(result);
 }
 
 /**
@@ -15,9 +23,9 @@ function clear(){
  * @return {int} a + b
  */
 function addition(a, b) {
-  result = a + b;
-  console.log('addition result:' + result);
-  return result;
+  additionResult = a + b;
+  console.log('addition result:' + additionResult);
+  return additionResult;
 }
 
 /**
@@ -51,11 +59,12 @@ function division(a, b) {
  * @param {*} a
  * @param {*} b
  * @param {*} operator (+, -, * , /)
+ * @return {int} result of operation
  * takes two numbers and an operator to do an operation
  */
 function operate(a, b, operator) {
   if (operator == '+') {
-    addition(a, b);
+    result = addition(a, b);
   } else if (operator == '-') {
     subtraction(a, b);
   } else if (operator == '*') {
@@ -63,6 +72,7 @@ function operate(a, b, operator) {
   } else if (operator == '/') {
     division(a, b);
   }
+  return result;
 }
 
 /**
@@ -74,19 +84,19 @@ function display(displayText) {
   displayScreen.innerHTML = displayText;
 }
 
+
 function assignNumberAndOperator(operatorSymbol) {
   onScreen = document.querySelector('#display').innerText;
-  a = Number(onScreen);
-  console.log('a:' + a);
-  console.log('operator: ' + operator);
+  firstNumber = Number(onScreen);
+  console.log('firstNumber:' + firstNumber);
+  console.log('operatorSymbol: ' + operatorSymbol);
   operator = operatorSymbol;
 }
 
-function assignSecondNumber() {  
+function assignSecondNumber() {
   onScreen2 = document.querySelector('#display').innerText;
-  console.log('onScreen2: ' + onScreen2);
-  b = Number(onScreen2);
-  console.log('b:' + b);
+  secondNumber = Number(onScreen2);
+  console.log('secondNumber:' + secondNumber);
 }
 
 // Button event listeners
@@ -94,10 +104,11 @@ const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
   assignSecondNumber();
-  console.log('a: ' + a);
-  console.log('b: ' + b);
+  console.log('firstNumber: ' + firstNumber);
+  console.log('secondNumber: ' + secondNumber);
   console.log('operator: ' + operator);
-  operate(a, b, operator);
+  result = operate(firstNumber, secondNumber, operator);
+  display(result);
 });
 
 const buttonAddition =
