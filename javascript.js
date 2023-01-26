@@ -8,7 +8,9 @@ let operator = '';
  * @return {int} a + b
  */
 function addition(a, b) {
-  return a + b;
+  result = a + b;
+  console.log('addition result:' + result);
+  return result;
 }
 
 /**
@@ -65,18 +67,36 @@ function display(displayText) {
   displayScreen.innerHTML = displayText;
 }
 
+function assignNumberAndOperator(operatorSymbol) {
+  onScreen = document.querySelector('#display').innerText;
+  a = onScreen;
+  console.log('a:' + a);
+  console.log('operator: ' + operator);
+  operator = operatorSymbol;
+}
+
+function assignSecondNumber() {  
+  onScreen2 = document.querySelector('#display').innerText;
+  console.log('onScreen2: ' + onScreen2);
+  b = onScreen2;
+  console.log('b:' + b);
+}
+
 // Button event listeners
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  display('=');
+  assignSecondNumber();
+  console.log('a: ' + a);
+  console.log('b: ' + b);
+  console.log('operator: ' + operator);
+  operate(a, b, operator);
 });
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
-  console.log(document.querySelector('#display'));
-  display('+');
+  assignNumberAndOperator('+');
 });
 
 const button1 =
