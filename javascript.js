@@ -2,6 +2,13 @@ let a = 0;
 let b = 0;
 let operator = '';
 
+function clear(){
+  a = 0;
+  b = 0;
+  operator = 0;
+  console.log('Clear function - a: ' + a + ' b: ' + b + ' operator: ' + operator);
+}
+
 /**
  * @param {int} a
  * @param {int} b
@@ -44,7 +51,7 @@ function division(a, b) {
  * @param {*} a
  * @param {*} b
  * @param {*} operator (+, -, * , /)
- * takes two numbers and an operator to do a sum
+ * takes two numbers and an operator to do an operation
  */
 function operate(a, b, operator) {
   if (operator == '+') {
@@ -115,4 +122,10 @@ const button3 =
 document.querySelector('#button3');
 button3.addEventListener('click', function() {
   display(3);
+});
+
+const buttonClear =
+document.querySelector('#buttonClear');
+buttonClear.addEventListener('click', function() {
+  clear();
 });
