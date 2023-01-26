@@ -1,5 +1,5 @@
-let a = '';
-let b = '';
+let a = 0;
+let b = 0;
 let operator = '';
 
 /**
@@ -69,7 +69,7 @@ function display(displayText) {
 
 function assignNumberAndOperator(operatorSymbol) {
   onScreen = document.querySelector('#display').innerText;
-  a = onScreen;
+  a = Number(onScreen);
   console.log('a:' + a);
   console.log('operator: ' + operator);
   operator = operatorSymbol;
@@ -78,7 +78,7 @@ function assignNumberAndOperator(operatorSymbol) {
 function assignSecondNumber() {  
   onScreen2 = document.querySelector('#display').innerText;
   console.log('onScreen2: ' + onScreen2);
-  b = onScreen2;
+  b = Number(onScreen2);
   console.log('b:' + b);
 }
 
