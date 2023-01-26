@@ -1,4 +1,3 @@
-let firstNumber = 0;
 let secondNumber = 0;
 let result = 0;
 let operator = '';
@@ -8,7 +7,6 @@ let operator = '';
  * Clears all and updates the display
  */
 function clear() {
-  firstNumber = 0;
   secondNumber = 0;
   result = 0;
   operator = '';
@@ -87,8 +85,8 @@ function display(displayText) {
 
 function assignNumberAndOperator(operatorSymbol) {
   onScreen = document.querySelector('#display').innerText;
-  firstNumber = Number(onScreen);
-  console.log('firstNumber:' + firstNumber);
+  result = Number(onScreen);
+  console.log('result:' + result);
   console.log('operatorSymbol: ' + operatorSymbol);
   operator = operatorSymbol;
 }
@@ -104,10 +102,10 @@ const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
   assignSecondNumber();
-  console.log('firstNumber: ' + firstNumber);
+  console.log('result: ' + result);
   console.log('secondNumber: ' + secondNumber);
   console.log('operator: ' + operator);
-  result = operate(firstNumber, secondNumber, operator);
+  result = operate(result, secondNumber, operator);
   display(result);
 });
 
