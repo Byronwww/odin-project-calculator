@@ -1,3 +1,6 @@
+let a = '';
+let b = '';
+let operator = '';
 
 /**
  * @param {int} a
@@ -62,4 +65,34 @@ function display(displayText) {
   displayScreen.innerHTML = displayText;
 }
 
-display(666);
+// Button event listeners
+const buttonEquals =
+document.querySelector('#buttonEquals');
+buttonEquals.addEventListener('click', function() {
+  display('=');
+});
+
+const buttonAddition =
+document.querySelector('#buttonAddition');
+buttonAddition.addEventListener('click', function() {
+  console.log(document.querySelector('#display'));
+  display('+');
+});
+
+const button1 =
+document.querySelector('#button1');
+button1.addEventListener('click', function() {
+  display(1);
+});
+
+const button2 =
+document.querySelector('#button2');
+button2.addEventListener('click', function() {
+  display(2);
+});
+
+const button3 =
+document.querySelector('#button3');
+button3.addEventListener('click', function() {
+  display(3);
+});
