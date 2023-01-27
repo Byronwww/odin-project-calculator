@@ -7,12 +7,13 @@ let operator = '';
  * Clears all and updates the display
  */
 function clear() {
+  console.log('test');
   secondNumber = 0;
   result = 0;
   operator = '';
-  console.log('Clear function - a: ' + firstNumber + ' secondNumber: ' +
+  console.log('Clear function - secondNumber: ' +
   secondNumber + ' operator: ' + operator + ' result: ' + result);
-  display(result);
+  display(0);
 }
 
 /**
