@@ -1,20 +1,3 @@
-let secondNumber = 0;
-let result = 0;
-let operator = '';
-
-
-/**
- * Clears all and updates the display
- */
-function clear() {
-  secondNumber = 0;
-  result = 0;
-  operator = '';
-  console.log('Clear function - secondNumber: ' +
-  secondNumber + ' operator: ' + operator + ' result: ' + result);
-  display(0);
-}
-
 /**
  * @param {int} a
  * @param {int} b
@@ -79,40 +62,32 @@ function operate(a, b, operator) {
  */
 function display(displayText) {
   const displayScreen = document.querySelector('#display');
-  displayScreen.innerHTML = displayText;
+  displayScreen.innerText += displayText;
 }
 
-
-function assignNumberAndOperator(operatorSymbol) {
-  onScreen = document.querySelector('#display').innerText;
-  result = Number(onScreen);
-  console.log('result:' + result);
-  console.log('operatorSymbol: ' + operatorSymbol);
-  operator = operatorSymbol;
+/**
+ * Used to read the calculators display
+ * @return {int} the current text on the calculators display
+ */
+function readDisplay() {
+  const displayScreen = document.querySelector('#display');
+  console.log(displayScreen.innerText);
+  return Number(displayScreen.innerText);
 }
 
-function assignSecondNumber() {
-  onScreen2 = document.querySelector('#display').innerText;
-  secondNumber = Number(onScreen2);
-  console.log('secondNumber:' + secondNumber);
-}
 
 // Button event listeners
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  assignSecondNumber();
-  console.log('result: ' + result);
-  console.log('secondNumber: ' + secondNumber);
-  console.log('operator: ' + operator);
-  result = operate(result, secondNumber, operator);
-  display(result);
+  //TODO
 });
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
-  assignNumberAndOperator('+');
+  // TODO assigns the first number to result and assigns the + operator
+  // TODO clears the screen display without clearing the assigned result variable
 });
 
 const button1 =
