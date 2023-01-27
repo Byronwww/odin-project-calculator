@@ -7,7 +7,6 @@ let operator = '';
  * Clears all and updates the display
  */
 function clear() {
-  console.log('test');
   secondNumber = 0;
   result = 0;
   operator = '';
