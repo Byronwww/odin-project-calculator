@@ -47,11 +47,11 @@ function operate(a, b, operator) {
   if (operator == '+') {
     result = addition(a, b);
   } else if (operator == '-') {
-    subtraction(a, b);
+    result = subtraction(a, b);
   } else if (operator == '*') {
-    multiplication(a, b);
+    result = multiplication(a, b);
   } else if (operator == '/') {
-    division(a, b);
+    result = division(a, b);
   }
   return result;
 }
@@ -95,12 +95,8 @@ const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
   total = readDisplay();
-  console.log('total:'+ total);
-  console.log(typeof total);
   operator = '+';
   clear();
-  // TODO assigns the first number to result and assigns the + operator
-  // TODO clear the screen display without clearing the assigned result variable
 });
 
 const button1 =
@@ -119,6 +115,14 @@ const button3 =
 document.querySelector('#button3');
 button3.addEventListener('click', function() {
   display(3);
+});
+
+const buttonSubtraction =
+document.querySelector('#buttonSubtraction');
+buttonSubtraction.addEventListener('click', function() {
+  total = readDisplay();
+  operator = '-';
+  clear();
 });
 
 const buttonClear =
