@@ -75,16 +75,21 @@ function readDisplay() {
   return Number(displayScreen.innerText);
 }
 
-function clear(){
+/**
+ * Clears the calculators display
+ */
+function clear() {
   const displayScreen = document.querySelector('#display');
   displayScreen.innerText = '';
 }
 
-// Button event listeners
 
 let total = 0;
 let secondNumber = 0;
 let operator = '';
+
+
+// Button event listeners
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
