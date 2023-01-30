@@ -76,11 +76,14 @@ function readDisplay() {
 }
 
 /**
- * Clears the calculators display
+ * Clears the calculators display and all held variables
  */
 function clear() {
   const displayScreen = document.querySelector('#display');
   displayScreen.innerText = '';
+  total = 0;
+  secondNumber = 0;
+  operator = '';
 }
 
 
