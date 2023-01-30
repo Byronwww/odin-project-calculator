@@ -44,6 +44,7 @@ function division(a, b) {
  * takes two numbers and an operator to do an operation
  */
 function operate(a, b, operator) {
+  console.log(operator);
   if (operator == '+') {
     result = addition(a, b);
   } else if (operator == '-') {
@@ -76,16 +77,12 @@ function readDisplay() {
 }
 
 /**
- * Clears the calculators display and all held variables
+ * Clears the calculators display
  */
 function clear() {
   const displayScreen = document.querySelector('#display');
   displayScreen.innerText = '';
-  total = 0;
-  secondNumber = 0;
-  operator = '';
 }
-
 
 let total = 0;
 let secondNumber = 0;
