@@ -75,19 +75,28 @@ function readDisplay() {
   return Number(displayScreen.innerText);
 }
 
+function clear(){
+  const displayScreen = document.querySelector('#display');
+  displayScreen.innerText = '';
+}
 
 // Button event listeners
-const buttonEquals =
-document.querySelector('#buttonEquals');
-buttonEquals.addEventListener('click', function() {
-  //TODO
-});
+
+let total = 0;
+let secondNumber = 0;
+let operator = '';
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
+  const displayScreen = document.querySelector('#display');
+  total = Number(displayScreen.innerText);
+  console.log('total:'+ total);
+  console.log(typeof total);
+  operator = '+';
+  clear();
   // TODO assigns the first number to result and assigns the + operator
-  // TODO clears the screen display without clearing the assigned result variable
+  // TODO clear the screen display without clearing the assigned result variable
 });
 
 const button1 =
@@ -113,3 +122,12 @@ document.querySelector('#buttonClear');
 buttonClear.addEventListener('click', function() {
   clear();
 });
+
+const buttonEquals =
+document.querySelector('#buttonEquals');
+buttonEquals.addEventListener('click', function() {
+  const displayScreenEquals = document.querySelector('#display');
+  secondNumber = Number(displayScreenEquals.innerText);
+  displayScreenEquals.innerText = operate(total, secondNumber, operator);
+});
+
