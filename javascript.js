@@ -94,8 +94,7 @@ let operator = '';
 const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
-  const displayScreen = document.querySelector('#display');
-  total = Number(displayScreen.innerText);
+  total = readDisplay();
   console.log('total:'+ total);
   console.log(typeof total);
   operator = '+';
@@ -131,8 +130,8 @@ buttonClear.addEventListener('click', function() {
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  const displayScreenEquals = document.querySelector('#display');
-  secondNumber = Number(displayScreenEquals.innerText);
-  displayScreenEquals.innerText = operate(total, secondNumber, operator);
+  secondNumber = readDisplay();
+  clear();
+  display(operate(total, secondNumber, operator));
 });
 
