@@ -90,12 +90,61 @@ let operator = '';
 
 
 // Button event listeners
+const button7 =
+document.querySelector('#button7');
+button7.addEventListener('click', function() {
+  display(7);
+});
 
-const buttonAddition =
-document.querySelector('#buttonAddition');
-buttonAddition.addEventListener('click', function() {
+const button8 =
+document.querySelector('#button8');
+button8.addEventListener('click', function() {
+  display(8);
+});
+
+const button9 =
+document.querySelector('#button9');
+button9.addEventListener('click', function() {
+  display(9);
+});
+
+const buttonDivision =
+document.querySelector('#buttonDivision');
+buttonDivision.addEventListener('click', function() {
   total = readDisplay();
-  operator = '+';
+  operator = '/';
+  clear();
+});
+
+const buttonClear =
+document.querySelector('#buttonClear');
+buttonClear.addEventListener('click', function() {
+  clear();
+});
+
+const button4 =
+document.querySelector('#button4');
+button4.addEventListener('click', function() {
+  display(4);
+});
+
+const button5 =
+document.querySelector('#button5');
+button5.addEventListener('click', function() {
+  display(5);
+});
+
+const button6 =
+document.querySelector('#button6');
+button6.addEventListener('click', function() {
+  display(6);
+});
+
+const buttonMultiplication =
+document.querySelector('#buttonMultiplication');
+buttonMultiplication.addEventListener('click', function() {
+  total = readDisplay();
+  operator = '*';
   clear();
 });
 
@@ -125,11 +174,18 @@ buttonSubtraction.addEventListener('click', function() {
   clear();
 });
 
-const buttonClear =
-document.querySelector('#buttonClear');
-buttonClear.addEventListener('click', function() {
-  clear();
+const button0 =
+document.querySelector('#button0');
+button0.addEventListener('click', function() {
+  display(0);
 });
+
+//TODO get decimal working
+/* const buttonDot =
+document.querySelector('#buttonDot');
+buttonDot.addEventListener('click', function() {
+  display(,);
+}); */
 
 const buttonEquals =
 document.querySelector('#buttonEquals');
@@ -137,5 +193,13 @@ buttonEquals.addEventListener('click', function() {
   secondNumber = readDisplay();
   clear();
   display(operate(total, secondNumber, operator));
+});
+
+const buttonAddition =
+document.querySelector('#buttonAddition');
+buttonAddition.addEventListener('click', function() {
+  total = readDisplay();
+  operator = '+';
+  clear();
 });
 
