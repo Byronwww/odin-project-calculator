@@ -180,7 +180,7 @@ button0.addEventListener('click', function() {
   display(0);
 });
 
-//TODO get decimal working
+// TODO get decimal working
 /* const buttonDot =
 document.querySelector('#buttonDot');
 buttonDot.addEventListener('click', function() {
