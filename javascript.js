@@ -84,9 +84,22 @@ function clear() {
   displayScreen.innerText = '';
 }
 
+/**
+ * Clears the calculators display and resets all variables to initial state
+ */
+function clearAll() {
+  clear();
+  total = 0;
+  secondNumber = 0;
+  operator = '';
+  operationNumber = 0;
+}
+
+
 let total = 0;
 let secondNumber = 0;
 let operator = '';
+let operationNumber = 0;
 
 
 // Button event listeners
@@ -119,7 +132,7 @@ buttonDivision.addEventListener('click', function() {
 const buttonClear =
 document.querySelector('#buttonClear');
 buttonClear.addEventListener('click', function() {
-  clear();
+  clearAll();
 });
 
 const button4 =
@@ -200,6 +213,11 @@ document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
   total = readDisplay();
   operator = '+';
+  operationNumber++;
+  if (operationNumber > 0) {
+    console.log('isOperatebigger:' + operationNumber);
+    display(operate(total, secondNumber, operator));
+  }
   clear();
 });
 
