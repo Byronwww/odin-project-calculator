@@ -197,7 +197,7 @@ buttonDot.addEventListener('click', function() {
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  result = readDisplay();
+  secondNumber = readDisplay();
   clearDisplay();
   result = (operate(result, secondNumber, operator));
   display(result);
@@ -211,7 +211,7 @@ buttonAddition.addEventListener('click', function() {
   operator = '+';
   if (operationNumber == 0) {
     operationNumber++;
-    secondNumber = readDisplay();
+    result = readDisplay();
     clearDisplay();
   } else {
     //WHAT TO DO HERE
