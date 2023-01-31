@@ -89,17 +89,15 @@ function clearDisplay() {
  */
 function clearAll() {
   clearDisplay();
-  firstNumber = 0;
   secondNumber = 0;
-  total = 0;
+  result = 0;
   operator = '';
   operationNumber = 0;
 }
 
 
-let firstNumber = 0;
 let secondNumber = 0;
-let total = 0;
+let result = 0;
 let operator = '';
 let operationNumber = 0;
 
@@ -199,17 +197,25 @@ buttonDot.addEventListener('click', function() {
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  secondNumber = readDisplay();
+  result = readDisplay();
   clearDisplay();
-  total = (operate(firstNumber, secondNumber, operator));
-  display(total);
+  result = (operate(result, secondNumber, operator));
+  display(result);
+  console.log('secondNumber: ' + secondNumber + 'total: ' + result);
+  operationNumber = 0;
 });
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
   operator = '+';
-  firstNumber = readDisplay();
-  clearDisplay();
+  if (operationNumber == 0) {
+    operationNumber++;
+    secondNumber = readDisplay();
+    clearDisplay();
+  } else {
+    //WHAT TO DO HERE
+
+  }
 });
 
