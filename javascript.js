@@ -79,7 +79,7 @@ function readDisplay() {
 /**
  * Clears the calculators display
  */
-function clear() {
+function clearDisplay() {
   const displayScreen = document.querySelector('#display');
   displayScreen.innerText = '';
 }
@@ -88,16 +88,18 @@ function clear() {
  * Clears the calculators display and resets all variables to initial state
  */
 function clearAll() {
-  clear();
-  total = 0;
+  clearDisplay();
+  firstNumber = 0;
   secondNumber = 0;
+  total = 0;
   operator = '';
   operationNumber = 0;
 }
 
 
-let total = 0;
+let firstNumber = 0;
 let secondNumber = 0;
+let total = 0;
 let operator = '';
 let operationNumber = 0;
 
@@ -124,9 +126,7 @@ button9.addEventListener('click', function() {
 const buttonDivision =
 document.querySelector('#buttonDivision');
 buttonDivision.addEventListener('click', function() {
-  total = readDisplay();
-  operator = '/';
-  clear();
+  // TODO
 });
 
 const buttonClear =
@@ -156,9 +156,7 @@ button6.addEventListener('click', function() {
 const buttonMultiplication =
 document.querySelector('#buttonMultiplication');
 buttonMultiplication.addEventListener('click', function() {
-  total = readDisplay();
-  operator = '*';
-  clear();
+// TODO
 });
 
 const button1 =
@@ -182,9 +180,7 @@ button3.addEventListener('click', function() {
 const buttonSubtraction =
 document.querySelector('#buttonSubtraction');
 buttonSubtraction.addEventListener('click', function() {
-  total = readDisplay();
-  operator = '-';
-  clear();
+  // TODO
 });
 
 const button0 =
@@ -204,20 +200,16 @@ const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
   secondNumber = readDisplay();
-  clear();
-  display(operate(total, secondNumber, operator));
+  clearDisplay();
+  total = (operate(firstNumber, secondNumber, operator));
+  display(total);
 });
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
-  total = readDisplay();
   operator = '+';
-  operationNumber++;
-  if (operationNumber > 0) {
-    console.log('isOperatebigger:' + operationNumber);
-    display(operate(total, secondNumber, operator));
-  }
-  clear();
+  firstNumber = readDisplay();
+  clearDisplay();
 });
 
