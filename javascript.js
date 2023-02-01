@@ -5,7 +5,6 @@
  */
 function addition(a, b) {
   additionResult = a + b;
-  console.log('addition result:' + additionResult);
   return additionResult;
 }
 
@@ -44,7 +43,6 @@ function division(a, b) {
  * takes two numbers and an operator to do an operation
  */
 function operate(a, b, operator) {
-  console.log(operator);
   if (operator == '+') {
     result = addition(a, b);
   } else if (operator == '-') {
@@ -72,7 +70,6 @@ function display(displayText) {
  */
 function readDisplay() {
   const displayScreen = document.querySelector('#display');
-  console.log(displayScreen.innerText);
   return Number(displayScreen.innerText);
 }
 
@@ -243,7 +240,6 @@ buttonDot.addEventListener('click', function() {
   display('.');
   if (displaySummed) {
     clearDisplay();
-    console.log('test');
     display('.');
   }
 });
