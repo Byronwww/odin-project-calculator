@@ -114,6 +114,26 @@ function numberButtonHandling(number) {
   }
 }
 
+/**
+ * Handles the logic of pressing the operator buttons
+ * @param {string} operatorButtonPressed + - * /
+ */
+function operatorButtonHandling(operatorButtonPressed) {
+  if (operationNumber == 0) {
+    operator = operatorButtonPressed;
+    operationNumber++;
+    result = readDisplay();
+    clearDisplay();
+  } else {
+    secondNumber = readDisplay();
+    result = (operate(result, secondNumber, operator));
+    clearDisplay();
+    display(result);
+    displaySummed = true;
+    operator = '+';
+  }
+}
+
 // Button event listeners
 const button7 =
 document.querySelector('#button7');
@@ -136,19 +156,7 @@ button9.addEventListener('click', function() {
 const buttonDivision =
 document.querySelector('#buttonDivision');
 buttonDivision.addEventListener('click', function() {
-  if (operationNumber == 0) {
-    operator = '/';
-    operationNumber++;
-    result = readDisplay();
-    clearDisplay();
-  } else {
-    secondNumber = readDisplay();
-    result = (operate(result, secondNumber, operator));
-    clearDisplay();
-    display(result);
-    displaySummed = true;
-    operator = '/';
-  }
+  operatorButtonHandling('/');
 });
 
 const buttonClear =
@@ -178,19 +186,7 @@ button6.addEventListener('click', function() {
 const buttonMultiplication =
 document.querySelector('#buttonMultiplication');
 buttonMultiplication.addEventListener('click', function() {
-  if (operationNumber == 0) {
-    operator = '*';
-    operationNumber++;
-    result = readDisplay();
-    clearDisplay();
-  } else {
-    secondNumber = readDisplay();
-    result = (operate(result, secondNumber, operator));
-    clearDisplay();
-    display(result);
-    displaySummed = true;
-    operator = '*';
-  }
+  operatorButtonHandling('*');
 });
 
 const button1 =
@@ -214,19 +210,7 @@ button3.addEventListener('click', function() {
 const buttonSubtraction =
 document.querySelector('#buttonSubtraction');
 buttonSubtraction.addEventListener('click', function() {
-  if (operationNumber == 0) {
-    operator = '-';
-    operationNumber++;
-    result = readDisplay();
-    clearDisplay();
-  } else {
-    secondNumber = readDisplay();
-    result = (operate(result, secondNumber, operator));
-    clearDisplay();
-    display(result);
-    displaySummed = true;
-    operator = '-';
-  }
+  operatorButtonHandling('-');
 });
 
 const button0 =
@@ -248,29 +232,19 @@ buttonDot.addEventListener('click', function() {
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  secondNumber = readDisplay();
-  clearDisplay();
-  result = (operate(result, secondNumber, operator));
-  display(result);
-  operationNumber = 0;
-  displaySummed = true;
+  if (displaySummed != true) {
+    secondNumber = readDisplay();
+    clearDisplay();
+    result = (operate(result, secondNumber, operator));
+    display(result);
+    operationNumber = 0;
+    displaySummed = true;
+  }
 });
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
 buttonAddition.addEventListener('click', function() {
-  if (operationNumber == 0) {
-    operator = '+';
-    operationNumber++;
-    result = readDisplay();
-    clearDisplay();
-  } else {
-    secondNumber = readDisplay();
-    result = (operate(result, secondNumber, operator));
-    clearDisplay();
-    display(result);
-    displaySummed = true;
-    operator = '+';
-  }
+  operatorButtonHandling('+');
 });
 
