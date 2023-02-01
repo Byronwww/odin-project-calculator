@@ -4,8 +4,7 @@
  * @return {int} a + b
  */
 function addition(a, b) {
-  additionResult = a + b;
-  return additionResult;
+  return a + b;
 }
 
 /**
