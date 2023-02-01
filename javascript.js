@@ -51,7 +51,7 @@ function operate(a, b, operator) {
   } else if (operator == '/') {
     result = division(a, b);
   }
-  return result;
+  return result.toFixed(2);
 }
 
 /**
