@@ -51,7 +51,9 @@ function operate(a, b, operator) {
   } else if (operator == '/') {
     result = division(a, b);
   }
-  return result.toFixed(2);
+  if (result % 1 === 0) {
+    return result;
+  } else return result.toFixed(2);
 }
 
 /**
@@ -256,7 +258,7 @@ buttonEquals.addEventListener('click', function() {
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
-buttonAddition.addEventListener('click', function() { 
+buttonAddition.addEventListener('click', function() {
   if (operationNumber == 0) {
     operator = '+';
     operationNumber++;
