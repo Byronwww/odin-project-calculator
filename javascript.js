@@ -138,7 +138,18 @@ button9.addEventListener('click', function() {
 const buttonDivision =
 document.querySelector('#buttonDivision');
 buttonDivision.addEventListener('click', function() {
-  // TODO
+  operator = '/';
+  if (operationNumber == 0) {
+    operationNumber++;
+    result = readDisplay();
+    clearDisplay();
+  } else {
+    secondNumber = readDisplay();
+    result = (operate(result, secondNumber, operator));
+    clearDisplay();
+    display(result);
+    displaySummed = true;
+  }
 });
 
 const buttonClear =
@@ -168,7 +179,18 @@ button6.addEventListener('click', function() {
 const buttonMultiplication =
 document.querySelector('#buttonMultiplication');
 buttonMultiplication.addEventListener('click', function() {
-// TODO
+  operator = '*';
+  if (operationNumber == 0) {
+    operationNumber++;
+    result = readDisplay();
+    clearDisplay();
+  } else {
+    secondNumber = readDisplay();
+    result = (operate(result, secondNumber, operator));
+    clearDisplay();
+    display(result);
+    displaySummed = true;
+  }
 });
 
 const button1 =
@@ -192,7 +214,18 @@ button3.addEventListener('click', function() {
 const buttonSubtraction =
 document.querySelector('#buttonSubtraction');
 buttonSubtraction.addEventListener('click', function() {
-  // TODO
+  operator = '-';
+  if (operationNumber == 0) {
+    operationNumber++;
+    result = readDisplay();
+    clearDisplay();
+  } else {
+    secondNumber = readDisplay();
+    result = (operate(result, secondNumber, operator));
+    clearDisplay();
+    display(result);
+    displaySummed = true;
+  }
 });
 
 const button0 =
