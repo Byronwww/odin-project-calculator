@@ -93,6 +93,7 @@ function clearAll() {
   result = 0;
   operator = '';
   operationNumber = 0;
+  displayTotalled = false;
 }
 
 
@@ -100,6 +101,7 @@ let secondNumber = 0;
 let result = 0;
 let operator = '';
 let operationNumber = 0;
+let displayTotalled = false;
 
 
 // Button event listeners
@@ -107,18 +109,30 @@ const button7 =
 document.querySelector('#button7');
 button7.addEventListener('click', function() {
   display(7);
+  if (displayTotalled) {
+    clearDisplay();
+    display(7);
+  }
 });
 
 const button8 =
 document.querySelector('#button8');
 button8.addEventListener('click', function() {
   display(8);
+  if (displayTotalled) {
+    clearDisplay();
+    display(8);
+  }
 });
 
 const button9 =
 document.querySelector('#button9');
 button9.addEventListener('click', function() {
   display(9);
+  if (displayTotalled) {
+    clearDisplay();
+    display(9);
+  }
 });
 
 const buttonDivision =
@@ -137,18 +151,30 @@ const button4 =
 document.querySelector('#button4');
 button4.addEventListener('click', function() {
   display(4);
+  if (displayTotalled) {
+    clearDisplay();
+    display(4);
+  }
 });
 
 const button5 =
 document.querySelector('#button5');
 button5.addEventListener('click', function() {
   display(5);
+  if (displayTotalled) {
+    clearDisplay();
+    display(5);
+  }
 });
 
 const button6 =
 document.querySelector('#button6');
 button6.addEventListener('click', function() {
   display(6);
+  if (displayTotalled) {
+    clearDisplay();
+    display(6);
+  }
 });
 
 const buttonMultiplication =
@@ -161,18 +187,30 @@ const button1 =
 document.querySelector('#button1');
 button1.addEventListener('click', function() {
   display(1);
+  if (displayTotalled) {
+    clearDisplay();
+    display(1);
+  }
 });
 
 const button2 =
 document.querySelector('#button2');
 button2.addEventListener('click', function() {
   display(2);
+  if (displayTotalled) {
+    clearDisplay();
+    display(2);
+  }
 });
 
 const button3 =
 document.querySelector('#button3');
 button3.addEventListener('click', function() {
   display(3);
+  if (displayTotalled) {
+    clearDisplay();
+    display(3);
+  }
 });
 
 const buttonSubtraction =
@@ -185,6 +223,10 @@ const button0 =
 document.querySelector('#button0');
 button0.addEventListener('click', function() {
   display(0);
+  if (displayTotalled) {
+    clearDisplay();
+    display(0);
+  }
 });
 
 // TODO get decimal working
@@ -201,7 +243,6 @@ buttonEquals.addEventListener('click', function() {
   clearDisplay();
   result = (operate(result, secondNumber, operator));
   display(result);
-  console.log('secondNumber: ' + secondNumber + 'total: ' + result);
   operationNumber = 0;
 });
 
@@ -214,8 +255,11 @@ buttonAddition.addEventListener('click', function() {
     result = readDisplay();
     clearDisplay();
   } else {
-    //WHAT TO DO HERE
-
+    secondNumber = readDisplay();
+    result = (operate(result, secondNumber, operator));
+    clearDisplay();
+    display(result);
+    displayTotalled = true;
   }
 });
 
