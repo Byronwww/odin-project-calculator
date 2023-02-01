@@ -232,14 +232,12 @@ buttonDot.addEventListener('click', function() {
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  if (displaySummed != true) {
-    secondNumber = readDisplay();
-    clearDisplay();
-    result = (operate(result, secondNumber, operator));
-    display(result);
-    operationNumber = 0;
-    displaySummed = true;
-  }
+  secondNumber = readDisplay();
+  clearDisplay();
+  result = (operate(result, secondNumber, operator));
+  display(result);
+  operationNumber = 0;
+  displaySummed = true;
 });
 
 const buttonAddition =
