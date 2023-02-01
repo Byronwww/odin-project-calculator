@@ -252,6 +252,7 @@ buttonEquals.addEventListener('click', function() {
   result = (operate(result, secondNumber, operator));
   display(result);
   operationNumber = 0;
+  displaySummed = true;
 });
 
 const buttonAddition =
