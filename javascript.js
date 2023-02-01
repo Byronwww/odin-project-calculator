@@ -180,7 +180,6 @@ button6.addEventListener('click', function() {
 const buttonMultiplication =
 document.querySelector('#buttonMultiplication');
 buttonMultiplication.addEventListener('click', function() {
-  operator = '*';
   if (operationNumber == 0) {
     operator = '*';
     operationNumber++;
