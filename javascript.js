@@ -138,8 +138,8 @@ button9.addEventListener('click', function() {
 const buttonDivision =
 document.querySelector('#buttonDivision');
 buttonDivision.addEventListener('click', function() {
-  operator = '/';
   if (operationNumber == 0) {
+    operator = '/';
     operationNumber++;
     result = readDisplay();
     clearDisplay();
@@ -149,6 +149,7 @@ buttonDivision.addEventListener('click', function() {
     clearDisplay();
     display(result);
     displaySummed = true;
+    operator = '/';
   }
 });
 
@@ -181,6 +182,7 @@ document.querySelector('#buttonMultiplication');
 buttonMultiplication.addEventListener('click', function() {
   operator = '*';
   if (operationNumber == 0) {
+    operator = '*';
     operationNumber++;
     result = readDisplay();
     clearDisplay();
@@ -190,6 +192,7 @@ buttonMultiplication.addEventListener('click', function() {
     clearDisplay();
     display(result);
     displaySummed = true;
+    operator = '*';
   }
 });
 
@@ -214,8 +217,8 @@ button3.addEventListener('click', function() {
 const buttonSubtraction =
 document.querySelector('#buttonSubtraction');
 buttonSubtraction.addEventListener('click', function() {
-  operator = '-';
   if (operationNumber == 0) {
+    operator = '-';
     operationNumber++;
     result = readDisplay();
     clearDisplay();
@@ -225,6 +228,7 @@ buttonSubtraction.addEventListener('click', function() {
     clearDisplay();
     display(result);
     displaySummed = true;
+    operator = '-';
   }
 });
 
@@ -257,9 +261,9 @@ buttonEquals.addEventListener('click', function() {
 
 const buttonAddition =
 document.querySelector('#buttonAddition');
-buttonAddition.addEventListener('click', function() {
-  operator = '+';
+buttonAddition.addEventListener('click', function() { 
   if (operationNumber == 0) {
+    operator = '+';
     operationNumber++;
     result = readDisplay();
     clearDisplay();
@@ -269,6 +273,7 @@ buttonAddition.addEventListener('click', function() {
     clearDisplay();
     display(result);
     displaySummed = true;
+    operator = '+';
   }
 });
 
