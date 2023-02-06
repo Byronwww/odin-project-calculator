@@ -115,6 +115,7 @@ function numberButtonHandling(number) {
   if ((displaySummed)) {
     clearDisplay();
     display(number);
+    displaySummed = false;
   } else if (firstOperation) {
     clearDisplay();
     display(number);
@@ -139,7 +140,7 @@ function operatorButtonHandling(operatorButtonPressed) {
     clearDisplay();
     display(result);
     displaySummed = true;
-    operator = 'operatorButtonPressed';
+    operator = operatorButtonPressed;
   }
   dotExists = false;
   firstOperation = false;
