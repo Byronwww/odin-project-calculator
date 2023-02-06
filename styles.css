@@ -14,4 +14,12 @@ button{
 #display{
     font-size: 25px;
     font-family: 'Scientific Calculator LCD', sans-serif;
+    padding: 10px;
+}
+
+
+#calculator{
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(144, 144, 150, 0.932);
 }
