@@ -92,6 +92,7 @@ function clearAll() {
   operator = '';
   operationNumber = 0;
   displaySummed = false;
+  dotExists = false;
 }
 
 
@@ -100,6 +101,7 @@ let result = 0;
 let operator = '';
 let operationNumber = 0;
 let displaySummed = false;
+let dotExists = false;
 
 
 /**
@@ -130,8 +132,9 @@ function operatorButtonHandling(operatorButtonPressed) {
     clearDisplay();
     display(result);
     displaySummed = true;
-    operator = '+';
+    operator = 'operatorButtonPressed';
   }
+  dotExists = false;
 }
 
 // Button event listeners
@@ -222,10 +225,13 @@ button0.addEventListener('click', function() {
 const buttonDot =
 document.querySelector('#buttonDot');
 buttonDot.addEventListener('click', function() {
-  display('.');
-  if (displaySummed) {
-    clearDisplay();
+  if (dotExists == false) {
     display('.');
+    dotExists = true;
+    if (displaySummed) {
+      clearDisplay();
+      display('.');
+    }
   }
 });
 
