@@ -15,11 +15,13 @@ button{
     font-size: 25px;
     font-family: 'Scientific Calculator LCD', sans-serif;
     padding: 10px;
+    background-color: rgba(97, 116, 42, 255);
+    border-radius: 5px;    
 }
 
 
 #calculator{
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 20px;
     background-color: rgba(144, 144, 150, 0.932);
 }
