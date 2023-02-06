@@ -123,6 +123,31 @@ function numberButtonHandling(number) {
   }
 }
 
+/**
+ * Handles the '.' button on the calculator
+ */
+function dotButtonHandling() {
+  if (dotExists == false) {
+    display('.');
+    dotExists = true;
+    if (displaySummed) {
+      clearDisplay();
+      display('.');
+    }
+  }
+}
+
+/**
+ * Handles the = button logic on the calculator
+ */
+function equalsButtonHandling() {
+  secondNumber = readDisplay();
+  clearDisplay();
+  result = (operate(result, secondNumber, operator));
+  display(result);
+  operationNumber = 0;
+  displaySummed = true;
+}
 
 /**
  * Handles the logic of pressing the operator buttons
@@ -145,6 +170,63 @@ function operatorButtonHandling(operatorButtonPressed) {
   dotExists = false;
   firstOperation = false;
 }
+
+
+/**
+ * Handles keyboard input for the calculator buttons
+ * @param {*} key Which key was pressed on the calculator
+ */
+function keyPress(key) {
+  if (key.keyCode === 96) {
+    numberButtonHandling(0);
+  };
+  if (key.keyCode === 97) {
+    numberButtonHandling(1);
+  };
+  if (key.keyCode === 98) {
+    numberButtonHandling(2);
+  };
+  if (key.keyCode === 99) {
+    numberButtonHandling(3);
+  };
+  if (key.keyCode === 100) {
+    numberButtonHandling(4);
+  };
+  if (key.keyCode === 101) {
+    numberButtonHandling(5);
+  };
+  if (key.keyCode === 102) {
+    numberButtonHandling(6);
+  };
+  if (key.keyCode === 103) {
+    numberButtonHandling(7);
+  };
+  if (key.keyCode === 104) {
+    numberButtonHandling(8);
+  };
+  if (key.keyCode === 105) {
+    numberButtonHandling(9);
+  };
+  if (key.keyCode === 110) { // .
+    dotButtonHandling();
+  };
+  if (key.keyCode === 107) {
+    operatorButtonHandling('+');
+  };
+  if (key.keyCode === 109) {
+    operatorButtonHandling('-');
+  };
+  if (key.keyCode === 106) {
+    operatorButtonHandling('*');
+  };
+  if (key.keyCode === 111) {
+    operatorButtonHandling('/');
+  };
+  if (key.keyCode === 32) { // =
+    equalsButtonHandling();
+  };
+}
+document.onkeydown = keyPress;
 
 // Button event listeners
 const button7 =
@@ -235,25 +317,13 @@ button0.addEventListener('click', function() {
 const buttonDot =
 document.querySelector('#buttonDot');
 buttonDot.addEventListener('click', function() {
-  if (dotExists == false) {
-    display('.');
-    dotExists = true;
-    if (displaySummed) {
-      clearDisplay();
-      display('.');
-    }
-  }
+  dotButtonHandling();
 });
 
 const buttonEquals =
 document.querySelector('#buttonEquals');
 buttonEquals.addEventListener('click', function() {
-  secondNumber = readDisplay();
-  clearDisplay();
-  result = (operate(result, secondNumber, operator));
-  display(result);
-  operationNumber = 0;
-  displaySummed = true;
+  equalsButtonHandling();
 });
 
 const buttonAddition =
