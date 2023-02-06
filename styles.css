@@ -10,3 +10,8 @@ button{
     font-family: sans-serif;
     font-size: 25px;
 }
+
+#display{
+    font-size: 25px;
+    font-family: 'Scientific Calculator LCD', sans-serif;
+}
