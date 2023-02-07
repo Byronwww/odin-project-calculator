@@ -39,6 +39,7 @@ button{
     background-color: rgba(97, 116, 42, 255);
     border-radius: 5px;    
     box-shadow: 5px 5px 5px black inset;
+    height: 30px;
 }
 
 #calculator{
