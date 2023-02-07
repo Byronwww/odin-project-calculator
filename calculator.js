@@ -222,7 +222,7 @@ function keyPress(key) {
   if (key.keyCode === 111) {
     operatorButtonHandling('/');
   };
-  if (key.keyCode === 32) { // =
+  if (key.keyCode === 69) { // =
     equalsButtonHandling();
   };
   if (key.keyCode === 8) { // Backspace to clear
