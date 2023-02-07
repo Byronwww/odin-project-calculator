@@ -16,6 +16,10 @@ body{
     background-color: rgb(226, 149, 49);
 }
 
+#buttonAddition, #buttonSubtraction, #buttonMultiplication, #buttonDivision {
+    background-color: darkgray;
+}
+
 button{
     margin: 5px;
     padding: 25px;
