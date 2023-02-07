@@ -11,7 +11,7 @@ button{
     font-family: sans-serif;
     font-size: 25px;
     border-radius: 5px; 
-    box-shadow: 5px 2px;
+    box-shadow: 5px 5px 5px;
 
 }
 
@@ -21,12 +21,12 @@ button{
     padding: 10px;
     background-color: rgba(97, 116, 42, 255);
     border-radius: 5px;    
+    box-shadow: 5px 5px 5px black inset;
 }
-
 
 #calculator{
     border-radius: 5px;
     padding: 20px;
     background-color: rgba(144, 144, 150, 0.932);
-    box-shadow: 6px 10px;
+    box-shadow: 5px 5px 5px;
 }
