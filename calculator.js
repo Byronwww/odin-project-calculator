@@ -226,7 +226,8 @@ function keyPress(key) {
     equalsButtonHandling();
   };
   if (key.keyCode === 8) { // Backspace to clear
-    clearDisplay();
+    clearAll();
+    display(0);
   };
 }
 document.onkeydown = keyPress;
