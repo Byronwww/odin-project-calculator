@@ -44,7 +44,7 @@ button{
 #calculator{
     display:flex;
     flex-direction: column;
-    flex-shrink: 1;
+    flex-shrink: 0;
     border-radius: 5px;
     padding: 20px;
     background-color: rgba(144, 144, 150, 0.932);
