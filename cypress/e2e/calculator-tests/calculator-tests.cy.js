@@ -36,4 +36,13 @@ describe('calculator app', () => {
     cy.get('#button1').click()
     cy.get('#buttonEquals').click()
     cy.get('#display').should('have.text', '2')})
+
+it('basic calculations: 10 + 10 = 20' , () => {
+    cy.get('#button1').click()
+    cy.get('#button0').click()
+    cy.get('#buttonAddition').click()
+    cy.get('#button1').click()
+    cy.get('#button0').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '20')})
 })
