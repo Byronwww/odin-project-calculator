@@ -1,4 +1,4 @@
-describe('example to-do app', () => {
+describe('calculator app', () => {
   beforeEach(() => {
     cy.visit('../../../index.html')
   })
@@ -30,3 +30,4 @@ describe('example to-do app', () => {
     cy.get('#buttonClear').should('have.text', 'C')
   })
 })
+
