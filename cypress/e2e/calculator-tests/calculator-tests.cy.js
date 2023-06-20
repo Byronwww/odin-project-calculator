@@ -10,24 +10,30 @@ describe('calculator app', () => {
     cy.get('#buttonEquals').should('have.text', '=')
     cy.get('#buttonAddition').should('have.text', '+')
 
-    //second from bottom row
+    // second from bottom row
     cy.get('#button1').should('have.text', '1')
     cy.get('#button2').should('have.text', '2')
     cy.get('#button3').should('have.text', '3')
     cy.get('#buttonSubtraction').should('have.text', '-')
 
-    //third from bottom row
+    // third from bottom row
     cy.get('#button4').should('have.text', '4')
     cy.get('#button5').should('have.text', '5')
     cy.get('#button6').should('have.text', '6')
     cy.get('#buttonMultiplication').should('have.text', 'x')
 
-    //top row
+    // top row
     cy.get('#button7').should('have.text', '7')
     cy.get('#button8').should('have.text', '8')
     cy.get('#button9').should('have.text', '9')
     cy.get('#buttonDivision').should('have.text', '÷')
     cy.get('#buttonClear').should('have.text', 'C')
   })
+  
+  it('basic calculations: 1 + 1 = 2' , () => {
+    cy.get('#button1').click()
+    cy.get('#buttonAddition').click()
+    cy.get('#button1').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '2')})
 })
-
