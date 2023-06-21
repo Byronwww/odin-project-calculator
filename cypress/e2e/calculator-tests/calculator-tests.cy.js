@@ -74,12 +74,34 @@ describe('calculator app', () => {
     cy.get('#display').should('have.text', '0')
   })
   
-  it('basic calculations: 1 + 1 = 2', () => {
+  it('Basic Calculations - Single Integer - Addition: 1 + 2 = 3', () => {
     cy.get('#button1').click()
     cy.get('#buttonAddition').click()
-    cy.get('#button1').click()
+    cy.get('#button2').click()
     cy.get('#buttonEquals').click()
-    cy.get('#display').should('have.text', '2')})
+    cy.get('#display').should('have.text', '3')})
+
+    it('Basic Calculations - Single Integer - Subtraction: 3 - 1 = 2', () => {
+      cy.get('#button3').click()
+      cy.get('#buttonSubtraction').click()
+      cy.get('#button1').click()
+      cy.get('#buttonEquals').click()
+      cy.get('#display').should('have.text', '2')})
+
+    it('Basic Calculations - Single Integer - Division: 6 / 3 = 2', () => {
+      cy.get('#button6').click()
+      cy.get('#buttonDivision').click()
+      cy.get('#button3').click()
+      cy.get('#buttonEquals').click()
+      cy.get('#display').should('have.text', '2')})
+
+
+    it('Basic Calculations - Single Integer - Multiplication: 4 * 2 = 8', () => {
+      cy.get('#button4').click()
+      cy.get('#buttonMultiplication').click()
+      cy.get('#button2').click()
+      cy.get('#buttonEquals').click()
+      cy.get('#display').should('have.text', '8')})
 
 it('basic calculations: 10 + 10 = 20', () => {
     cy.get('#button1').click()
