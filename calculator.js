@@ -53,7 +53,7 @@ function operate(a, b, operator) {
   }
   if (result % 1 === 0) {
     return result;
-  } else return result.toFixed(2);
+  } else return parseFloat(result.toFixed(2));
 }
 
 /**
