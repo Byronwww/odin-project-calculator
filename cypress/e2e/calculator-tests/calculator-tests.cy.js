@@ -30,8 +30,9 @@ describe('calculator app', () => {
     cy.get('#buttonClear').should('have.text', 'C')
   })
 
-  it('has a display', () => {
+  it('has a display with a 0 on load', () => {
     cy.get('#display').exists
+    cy.get('#display').should('have.text', '0')
   })
 
   it('each number shows on screen when the corresponding button is clicked and the C button clears the display', () => {
