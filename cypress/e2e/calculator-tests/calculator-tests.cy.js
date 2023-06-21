@@ -103,12 +103,85 @@ describe('calculator app', () => {
     cy.get('#buttonEquals').click()
     cy.get('#display').should('have.text', '8')})
 
-  it('basic calculations: 10 + 10 = 20', () => {
+  it('Basic Calculations - Larger Integers - Addition: 12 + 23 = 35', () => {
     cy.get('#button1').click()
-    cy.get('#button0').click()
+    cy.get('#button2').click()
     cy.get('#buttonAddition').click()
+    cy.get('#button2').click()
+    cy.get('#button3').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '35')})
+
+
+  it('Basic Calculations - Larger Integers - Subtraction: 36 - 15 = 21', () => {
+    cy.get('#button3').click()
+    cy.get('#button6').click()
+    cy.get('#buttonSubtraction').click()
+    cy.get('#button1').click()
+    cy.get('#button5').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '21')})
+
+  it('Basic Calculations - Larger Integers - Division: 999 / 9 = 111', () => {
+    cy.get('#button9').click()
+    cy.get('#button9').click()
+    cy.get('#button9').click()
+    cy.get('#buttonDivision').click()
+    cy.get('#button9').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '111')})
+
+  it('Basic Calculations - Larger Integers - Multiplication: 10 x 99 = 990', () => {
     cy.get('#button1').click()
     cy.get('#button0').click()
+    cy.get('#buttonMultiplication').click()
+    cy.get('#button9').click()
+    cy.get('#button9').click()
     cy.get('#buttonEquals').click()
-    cy.get('#display').should('have.text', '20')})
+    cy.get('#display').should('have.text', '990')})
+
+  it('Basic Calculations - Decimals - Addition: 1.2 + 2.3 = 3.5', () => {
+    cy.get('#button1').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button2').click()
+    cy.get('#buttonAddition').click()
+    cy.get('#button2').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button3').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '3.5')})
+  
+  it('Basic Calculations - Decimals - Subtraction: 3.6 - 1.5 = 2.1', () => {
+    cy.get('#button3').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button6').click()
+    cy.get('#buttonSubtraction').click()
+    cy.get('#button1').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button5').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '2.1')})
+
+  it('Basic Calculations - Decimals - Division: 99.9 / 2 = 49.95', () => {
+    cy.get('#button9').click()
+    cy.get('#button9').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button9').click()
+    cy.get('#buttonDivision').click()
+    cy.get('#button2').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '49.95')})
+
+  it('Basic Calculations - Decimals - Multiplication: 10.2 x 99.2 = 1011.84', () => {
+    cy.get('#button1').click()
+    cy.get('#button0').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button2').click()
+    cy.get('#buttonMultiplication').click()
+    cy.get('#button9').click()
+    cy.get('#button9').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button2').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '1011.84')})
 })
