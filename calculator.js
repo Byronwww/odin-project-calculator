@@ -94,6 +94,7 @@ function clearAll() {
   displaySummed = false;
   dotExists = false;
   firstOperation = true;
+  firstEquals = true;
 }
 
 
@@ -104,6 +105,7 @@ let operationNumber = 0;
 let displaySummed = false;
 let dotExists = false;
 let firstOperation = true;
+let firstEquals = true;
 
 
 /**
@@ -141,12 +143,17 @@ function dotButtonHandling() {
  * Handles the = button logic on the calculator
  */
 function equalsButtonHandling() {
-  secondNumber = readDisplay();
-  clearDisplay();
-  result = (operate(result, secondNumber, operator));
-  display(result);
-  operationNumber = 0;
-  displaySummed = true;
+  if (firstEquals == true) {
+    secondNumber = readDisplay();
+    clearDisplay();
+    result = (operate(result, secondNumber, operator));
+    display(result);
+    operationNumber = 0;
+    displaySummed = true;
+    firstEquals = false;
+  } else {
+    // do nothing if ='s button has has already been in a calculation
+  }
 }
 
 /**
@@ -154,6 +161,7 @@ function equalsButtonHandling() {
  * @param {string} operatorButtonPressed + - * /
  */
 function operatorButtonHandling(operatorButtonPressed) {
+  firstEquals = true;
   if (operationNumber == 0) {
     operator = operatorButtonPressed;
     operationNumber++;
