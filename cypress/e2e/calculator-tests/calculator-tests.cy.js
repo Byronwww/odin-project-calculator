@@ -344,4 +344,13 @@ describe('calculator app', () => {
     cy.get('#button5').click()
     cy.get('#buttonEquals').click()
     cy.get('#display').should('have.text', '4')})
+
+  it.only('Decimal Button Functionality - Adding multiple decimals to a number is not allowed', () =>{
+    cy.get('#button1').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button1').click()
+    cy.get('#buttonDot').click()
+    cy.get('#display').should('have.text', '1.1')
+    cy.get('#button2').click()
+    cy.get('#display').should('have.text', '1.12')})
 })
