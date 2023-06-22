@@ -203,7 +203,7 @@ describe('calculator app', () => {
     cy.get('#display').should('have.text', '15')})
 
 
-  it('Chaining Equations - Subtraction (100 - 1 - 9 = 90 - 20 - 5 = 65) ', () => {
+  it('Chaining Equations - Subtraction (100 - 1 - 9 = 90 - 20 - 5 = 65)', () => {
     cy.get('#button1').click()
     cy.get('#button0').click()
     cy.get('#button0').click()
@@ -222,4 +222,18 @@ describe('calculator app', () => {
     cy.get('#buttonEquals').click()
     cy.get('#display').should('have.text', '65')})
 
+  it('Chaining Equations - Multiplication (2 x 5 x 3 = 30 x 3 x 2 = 180)', () => {
+    cy.get('#button2').click()
+    cy.get('#buttonMultiplication').click()
+    cy.get('#button5').click()
+    cy.get('#buttonMultiplication').click()
+    cy.get('#button3').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '30')
+    cy.get('#buttonMultiplication').click()
+    cy.get('#button3').click()
+    cy.get('#buttonMultiplication').click()
+    cy.get('#button2').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '180')})
 })
