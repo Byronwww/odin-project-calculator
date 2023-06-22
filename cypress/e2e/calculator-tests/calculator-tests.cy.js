@@ -202,4 +202,24 @@ describe('calculator app', () => {
     cy.get('#buttonEquals').click()
     cy.get('#display').should('have.text', '15')})
 
+
+  it('Chaining Equations - Subtraction (100 - 1 - 9 = 90 - 20 - 5 = 65) ', () => {
+    cy.get('#button1').click()
+    cy.get('#button0').click()
+    cy.get('#button0').click()
+    cy.get('#buttonSubtraction').click()
+    cy.get('#button1').click()
+    cy.get('#buttonSubtraction').click()
+    cy.get('#button9').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '90')
+    cy.get('#buttonSubtraction').click()
+    cy.get('#button2').click()
+    cy.get('#button0').click()
+    cy.get('#buttonSubtraction').click()
+    cy.get('#display').should('have.text', '70')
+    cy.get('#button5').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '65')})
+
 })
