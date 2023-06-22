@@ -353,4 +353,14 @@ describe('calculator app', () => {
     cy.get('#display').should('have.text', '1.1')
     cy.get('#button2').click()
     cy.get('#display').should('have.text', '1.12')})
+
+  it.only('Equals Button Functionality - Pressing the equals button multiple times after a calculation does nothing ', () =>{
+    cy.get('#button1').click()
+    cy.get('#buttonAddition').click()
+    cy.get('#button2').click()
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '3')
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '3')
+  })
 })
