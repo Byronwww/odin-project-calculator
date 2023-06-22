@@ -354,6 +354,17 @@ describe('calculator app', () => {
     cy.get('#button2').click()
     cy.get('#display').should('have.text', '1.12')})
 
+  it('Decimal Button Functionality - Pressing the decimal button before numbers allows a "0.x" decimal number to be entered', () =>{
+    cy.get('#buttonDot').click()
+    cy.get('#button1').click()
+    cy.get('#display').should('have.text', '0.1')
+    cy.get('#buttonAddition').click()
+    cy.get('#buttonDot').click()
+    cy.get('#button2').click()
+    cy.get('#display').should('have.text', '0.2')
+    cy.get('#buttonEquals').click()
+    cy.get('#display').should('have.text', '0.3')})
+
   it('Equals Button Functionality - Pressing the equals button multiple times after a calculation does nothing ', () =>{
     cy.get('#button1').click()
     cy.get('#buttonAddition').click()
@@ -362,5 +373,5 @@ describe('calculator app', () => {
     cy.get('#display').should('have.text', '3')
     cy.get('#buttonEquals').click()
     cy.get('#display').should('have.text', '3')
-  })
+  })  
 })
