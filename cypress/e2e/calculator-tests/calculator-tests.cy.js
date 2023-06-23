@@ -2,7 +2,7 @@ describe('calculator app', () => {
   beforeEach(() => {
     cy.visit('../../../index.html')
   })
-  
+
   it('all calculator buttons are correctly labelled', () => {
     // bottom row
     cy.get('#button0').should('have.text', '0')
@@ -73,7 +73,7 @@ describe('calculator app', () => {
     cy.get('#buttonClear').click()
     cy.get('#display').should('have.text', '0')
   })
-  
+
   it('Basic Calculations - Single Integer - Addition (1 + 2 = 3)', () => {
     cy.get('#button1').click()
     cy.get('#buttonAddition').click()
@@ -150,7 +150,7 @@ describe('calculator app', () => {
     cy.get('#button3').click()
     cy.get('#buttonEquals').click()
     cy.get('#display').should('have.text', '3.5')})
-  
+
   it('Basic Calculations - Decimals - Subtraction (3.6 - 1.5 = 2.1)', () => {
     cy.get('#button3').click()
     cy.get('#buttonDot').click()
@@ -282,7 +282,7 @@ describe('calculator app', () => {
 
   it('Clear Button Functionality - Clears Addition Chain Midway (10 + 5 + 2; C; 2 + 2 = 4)', () => {
     cy.get('#button1').click()
-    cy.get('#button0').click()    
+    cy.get('#button0').click()
     cy.get('#buttonAddition').click()
     cy.get('#button5').click()
     cy.get('#buttonAddition').click()
@@ -313,7 +313,7 @@ describe('calculator app', () => {
     cy.get('#display').should('have.text', '3')})
 
   it('Clear Button Functionality - Clears Multiplication Chain Midway (5 x 2 x 3; C; 3 x 4 = 12)', () => {
-    cy.get('#button5').click()    
+    cy.get('#button5').click()
     cy.get('#buttonMultiplication').click()
     cy.get('#button2').click()
     cy.get('#buttonMultiplication').click()
@@ -380,7 +380,7 @@ describe('calculator app', () => {
     cy.get('#button1').click()
     cy.get('#display').should('have.text', '1')
   })
-  
+
   it('Dividing by 0 displays an error message', () =>{
     cy.get('#button0').click()
     cy.get('#buttonDivision').click()
@@ -390,6 +390,5 @@ describe('calculator app', () => {
     cy.on('window:alert', alertShown)
     cy.get("@alertShown").should('have.been.calledOnceWith', 'Dividing by zero will end us all!')
     cy.get('#display').should('have.text', 'NaN')
-
   })
 })
