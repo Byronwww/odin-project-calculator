@@ -31,6 +31,9 @@ function multiplication(a, b) {
  * @return {int} a / b
  */
 function division(a, b) {
+  if (b == 0) {
+    alert('Dividing by zero will end us all!')
+  }
   return a / b;
 }
 

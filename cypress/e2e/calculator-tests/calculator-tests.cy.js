@@ -380,4 +380,16 @@ describe('calculator app', () => {
     cy.get('#button1').click()
     cy.get('#display').should('have.text', '1')
   })
+  
+  it('Dividing by 0 displays an error message', () =>{
+    cy.get('#button0').click()
+    cy.get('#buttonDivision').click()
+    cy.get('#button0').click()
+    cy.get('#buttonEquals').click()
+    const alertShown = cy.stub().as('alertShown')
+    cy.on('window:alert', alertShown)
+    cy.get("@alertShown").should('have.been.calledOnceWith', 'Dividing by zero will end us all!')
+    cy.get('#display').should('have.text', 'NaN')
+
+  })
 })
