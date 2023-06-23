@@ -375,7 +375,7 @@ describe('calculator app', () => {
     cy.get('#display').should('have.text', '3')
   })
 
-  it.only('0 Button Functionality - 0 Button does not add a zero to the front of numbers', () =>{
+  it('0 Button Functionality - 0 Button does not add a zero to the front of numbers', () =>{
     cy.get('#button0').click()
     cy.get('#button1').click()
     cy.get('#display').should('have.text', '1')

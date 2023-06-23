@@ -107,6 +107,7 @@ let dotExists = false;
 let firstOperation = true;
 let firstEquals = true;
 
+display(0);
 
 /**
  * Handles the logic of numerical button presses
@@ -118,6 +119,9 @@ function numberButtonHandling(number) {
     clearDisplay();
     display(number);
     displaySummed = false;
+  } else if (firstOperation && number == 0) {
+    clearDisplay();
+    display(number);
   } else if (firstOperation) {
     clearDisplay();
     display(number);
@@ -129,9 +133,14 @@ function numberButtonHandling(number) {
  * Handles the '.' button on the calculator
  */
 function dotButtonHandling() {
+  if (dotExists == false && firstOperation == false && readDisplay() == '') {
+    display('0.');
+    dotExists = true;
+  }
   if (dotExists == false) {
     display('.');
     dotExists = true;
+    firstOperation = false;
     if (displaySummed) {
       clearDisplay();
       display('.');
@@ -151,6 +160,7 @@ function equalsButtonHandling() {
     operationNumber = 0;
     displaySummed = true;
     firstEquals = false;
+    firstOperation = true;
   } else {
     // do nothing if ='s button has already been used in a calculation
   }
