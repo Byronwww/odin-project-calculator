@@ -152,7 +152,7 @@ function equalsButtonHandling() {
     displaySummed = true;
     firstEquals = false;
   } else {
-    // do nothing if ='s button has has already been in a calculation
+    // do nothing if ='s button has already been used in a calculation
   }
 }
 
