@@ -98,6 +98,7 @@ function clearAll() {
   dotExists = false;
   firstOperation = true;
   firstEquals = true;
+  duplicateOperatorPress = false;
 }
 
 
@@ -109,6 +110,7 @@ let displaySummed = false;
 let dotExists = false;
 let firstOperation = true;
 let firstEquals = true;
+let duplicateOperatorPress = false;
 
 display(0);
 
@@ -118,6 +120,7 @@ display(0);
  */
 function numberButtonHandling(number) {
   display(number);
+  duplicateOperatorPress = false;
   if ((displaySummed)) {
     clearDisplay();
     display(number);
@@ -175,23 +178,24 @@ function equalsButtonHandling() {
  */
 function operatorButtonHandling(operatorButtonPressed) {
   firstEquals = true;
-  if (operationNumber == 0) {
+  if (operationNumber == 0 && duplicateOperatorPress != true) {
     operator = operatorButtonPressed;
     operationNumber++;
     result = readDisplay();
     clearDisplay();
-  } else {
+    duplicateOperatorPress = true;
+  } else if (duplicateOperatorPress != true) {
     secondNumber = readDisplay();
     result = (operate(result, secondNumber, operator));
     clearDisplay();
     display(result);
     displaySummed = true;
     operator = operatorButtonPressed;
+    duplicateOperatorPress = true;
   }
   dotExists = false;
   firstOperation = false;
 }
-
 
 /**
  * Handles keyboard input for the calculator buttons
