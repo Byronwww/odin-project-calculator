@@ -32,7 +32,7 @@ function multiplication(a, b) {
  */
 function division(a, b) {
   if (b == 0) {
-    alert('Dividing by zero will end us all!')
+    alert('Dividing by zero will end us all!');
   }
   return a / b;
 }
