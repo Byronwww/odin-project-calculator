@@ -99,6 +99,7 @@ function clearAll() {
   firstOperation = true;
   firstEquals = true;
   duplicateOperatorPress = false;
+  firstNumber = 0;
 }
 
 
@@ -111,6 +112,7 @@ let dotExists = false;
 let firstOperation = true;
 let firstEquals = true;
 let duplicateOperatorPress = false;
+let firstNumber = 0;
 
 display(0);
 
@@ -179,12 +181,14 @@ function equalsButtonHandling() {
 function operatorButtonHandling(operatorButtonPressed) {
   firstEquals = true;
   if (operationNumber == 0 && duplicateOperatorPress != true) {
+    firstNumber = readDisplay();
     operator = operatorButtonPressed;
     operationNumber++;
     result = readDisplay();
     clearDisplay();
     duplicateOperatorPress = true;
   } else if (duplicateOperatorPress != true) {
+    firstNumber = readDisplay();
     secondNumber = readDisplay();
     result = (operate(result, secondNumber, operator));
     clearDisplay();
@@ -192,6 +196,12 @@ function operatorButtonHandling(operatorButtonPressed) {
     displaySummed = true;
     operator = operatorButtonPressed;
     duplicateOperatorPress = true;
+  } else if (duplicateOperatorPress == true) {
+    console.log('first number' + firstNumber);
+    clearDisplay();
+    display(result);
+    displaySummed = true;
+    operator = operatorButtonPressed;
   }
   dotExists = false;
   firstOperation = false;
